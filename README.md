@@ -1,2 +1,7 @@
 # lalayes
-Personal landing page, URL: https://lalayes.com.
+
+Minimalist code style design.
+
+Only 4KB.
+
+URL: https://lalayes.com.
