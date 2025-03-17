@@ -1,6 +1,11 @@
 /* Body */
+@font-face {
+    font-family: "Source Code Pro-Regular";
+    src: url("../fonts/Source Code Pro.woff2");
+}
+
 html {
-    font-size: 62.5%;
+    font-size: 66.5%;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Microsoft YaHei";
 }
 
@@ -9,8 +14,8 @@ body {
     line-height: 1.618;
     max-width: 38em;
     margin: auto;
-    color: #ccc;
-    background-color: #000;
+    color: #cccccc;
+    background-color: #000000;
     padding: 13px;
 }
 
@@ -35,8 +40,8 @@ h6 {
     line-height: 1.1;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Microsoft YaHei";
     font-weight: 700;
-    /*margin-top: 3rem;*/
-    margin-bottom: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
     overflow-wrap: break-word;
     word-wrap: break-word;
     -ms-word-break: break-all;
@@ -44,20 +49,20 @@ h6 {
 }
 
 h1 {
-    font-size: 2.2em;
-    /*line-height: 1.618;*/
-    /*font-weight: 700;*/
-    margin: 0 0 2.5rem 0;
+    font-size: 2.25em;
 }
 
 h2 {
-    font-size: 1.8em;
+    font-size: 2em;
 }
 
+h3 {
+    font-size: 1.75em;
+}
 
 p {
     margin-top: 0px;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 small,
@@ -67,21 +72,21 @@ sup {
 }
 
 hr {
-    border-color: #1d7484;
+    border-color: #d415d4;
 }
 
 a {
     text-decoration: none;
-    color: #ccc;
+    color: #cccccc;
 }
 
 a:visited {
-    color: #ccc;
+    color: #cccccc;
 }
 
 a:hover {
-    color: #ccc;
-    border-bottom: 2px solid #fc0;
+    color: #00ffff;
+    border-bottom: 2px solid #ffcc00;
 }
 
 ul {
@@ -101,9 +106,9 @@ blockquote {
     padding-top: 0.8em;
     padding-bottom: 0.8em;
     padding-right: 0.8em;
-    border-left: 5px solid #1d7484;
+    border-left: 5px solid #d415d4;
     margin-bottom: 2.5rem;
-    background-color: #f1f1f1;
+    background-color: #1b1e24;
 }
 
 blockquote p {
@@ -114,15 +119,75 @@ img,
 video {
     height: auto;
     max-width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+section {
+    font-family: "Source Code Pro-Regular", Consolas, "Hack-Regular", "Lucida Console", monospace;
+}
+
+section>mark {
+    background-color: unset;
+    color: #ffcc00;
+}
+
+em {
+    color: #00ffffff;
+}
 
 
+.svg-icon {
+    display: inline-flex;
+    align-self: center;
+}
+
+.svg-icon svg {
+    height: 1em;
+    width: 1em;
+    fill: #cccccc
+}
+
+.svg-icon.svg-baseline svg {
+    top: .125em;
+    position: relative;
+}
+
+.vertical {
+    position: relative;
+    &:before {
+      top: 25px;
+      left: 80px;
+      position: absolute;
+      display: block;
+      width: 6px;
+      height: 30px;
+      background: #4d99f9;
+      content: '';
+    }
+}
+
+.cursor {
+    animation: cursor 1s infinite;
+}
+
+@keyframes cursor {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 /* Pre and Code */
 pre {
-    background-color: #f1f1f1;
+    background-color: #1b1e24;
     display: block;
     padding: 1em;
     overflow-x: auto;
@@ -136,7 +201,7 @@ kbd,
 samp {
     font-size: 0.9em;
     padding: 0 0.5em;
-    background-color: #f1f1f1;
+    background-color: #1b1e24;
     white-space: pre-wrap;
 }
 
@@ -146,7 +211,6 @@ pre>code {
     white-space: pre;
     font-size: 1em;
 }
-
 
 /* Tables */
 table {
@@ -159,18 +223,18 @@ table {
 td,
 th {
     padding: 0.5em;
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom: 1px solid #1b1e24;
 }
 
 /* Buttons, forms and input */
 input,
 textarea {
-    border: 1px solid #4a4a4a;
+    border: 1px solid #32cd32;
 }
 
 input:focus,
 textarea:focus {
-    border: 1px solid #1d7484;
+    border: 1px solid #d415d4;
 }
 
 textarea {
@@ -188,10 +252,10 @@ input[type=file]::file-selector-button {
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
-    background-color: #1d7484;
-    color: #f9f9f9;
+    background-color: #d415d4;
+    color: #000000;
     border-radius: 1px;
-    border: 1px solid #1d7484;
+    border: 1px solid #d415d4;
     cursor: pointer;
     box-sizing: border-box;
 }
@@ -212,8 +276,8 @@ input[type=submit]:hover,
 input[type=reset]:hover,
 input[type=button]:hover,
 input[type=file]::file-selector-button:hover {
-    background-color: #982c61;
-    color: #f9f9f9;
+    background-color: #00ffff;
+    color: #000000;
     outline: 0;
 }
 
@@ -230,12 +294,12 @@ input[type=file]::file-selector-button:focus-visible {
 textarea,
 select,
 input {
-    color: #4a4a4a;
+    color: #32cd32;
     padding: 6px 10px;
     /* The 6px vertically centers text on FF, ignored by Webkit */
     margin-bottom: 10px;
-    background-color: #f1f1f1;
-    border: 1px solid #f1f1f1;
+    background-color: #1b1e24;
+    border: 1px solid #1b1e24;
     border-radius: 4px;
     box-shadow: none;
     box-sizing: border-box;
@@ -244,12 +308,12 @@ input {
 textarea:focus,
 select:focus,
 input:focus {
-    border: 1px solid #fc0;
+    border: 1px solid #d415d4;
     outline: 0;
 }
 
 input[type=checkbox]:focus {
-    outline: 1px dotted #1d7484;
+    outline: 1px dotted #d415d4;
 }
 
 label,
@@ -258,5 +322,4 @@ fieldset {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    border-color: #1d7484;
 }

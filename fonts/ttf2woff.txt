@@ -1,0 +1,21 @@
+# python 
+# pip install fonttools
+
+# 变量含义：
+# $input_file：输入的字体文件。
+# $text_file：定义保留字符的纯文本文件路径。
+# $output_file：输出的字体文件路径。
+
+$ fonttools subset "$input_file" --text-file="$text_file" --output-file="$output_file"
+
+fonttools subset Hack-Regular.ttf --text-file=Hack-Regular.txt
+
+
+# 压缩成 WOFF2 格式
+# 变量含义：
+# $input_file：输入的字体文件。
+# $output_file：输出的字体文件路径。
+
+$ fonttools ttLib.woff2 compress "$input_file" -o "$output_file"
+
+$ fonttools ttLib.woff2 compress Hack-Regular.ttf
