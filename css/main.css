@@ -135,7 +135,7 @@ em {
 .imglogo {
     height: auto;
     max-width: 100%;
-    margin-top: 5rem;
+    /*margin-top: 5rem;*/
     -webkit-filter: blur(5px);
     filter: blur(5px);
     transition: all 0.7s;
