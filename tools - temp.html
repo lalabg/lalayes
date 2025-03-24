@@ -1,0 +1,150 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>我是辣辣 - TOOLS</title>
+    <meta name="description" content="辣辣的工具箱，简单，易用。">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="black">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="css/sakura-vader.css">
+
+</head>
+
+<body>    
+        <header>            
+            <h1>Simple tools</h1>
+        </header>
+<section id="forms">
+          <header>
+            <h2>Unit Convert</h2>
+          </header>
+          <form>
+            <fieldset id="Resistors">
+              <legend>Resistors</legend>
+              <p>
+                <input id="om" type="number" step="any" placeholder="Enter a Number"><span title="欧姆">（Ω）</span>
+              </p>
+                            <p>
+                <input id="ko" type="number" step="any" placeholder="Enter a Number"><span title="千欧">（kΩ）</span>
+              </p>
+                            <p>
+                <input id="mo" type="number" step="any" placeholder="Enter a Number"><span title="兆欧">（mΩ）</span>
+              </p>
+              <p>即：1TΩ（太欧）=1000 GΩ（吉欧）=10^6MΩ（兆欧）=10^9KΩ（千欧）=10^12Ω（欧姆）</p>
+            </fieldset>
+            <p><a href="javascript:void(0);" onclick="clearall()" id="ClearAll">[Clear]</a> <a href="#top">[Top]</a></p>
+                       
+                        <fieldset id="Capacitors">
+              <legend>Capacitors</legend>
+              <p>
+                <input id="pf" type="number" step="any" placeholder="Enter a Number"><span title="皮法">（pF）</span>
+              </p>
+                            <p>
+                <input id="nf" type="number" step="any" placeholder="Enter a Number"><span title="納法">（nF）</span>
+              </p>
+                            <p>
+                <input id="uf" type="number" step="any" placeholder="Enter a Number"><span title="微法">（μF）</span>
+              </p>
+            </fieldset>            
+            <p><a href="javascript:void(0);" onclick="clearall()" id="ClearAll">[Clear]</a> <a href="#top">[Top]</a></p>
+
+                        <fieldset id="Inductance">
+              <legend>Inductance</legend>
+              <p>
+                <input id="nh" type="number" step="any" placeholder="Enter a Number"><span title="納亨">（nH）</span>
+              </p>
+                            <p>
+                <input id="uh" type="number" step="any" placeholder="Enter a Number"><span title="微亨">（µH）</span>
+              </p>
+                            <p>
+                <input id="mh" type="number" step="any" placeholder="Enter a Number"><span title="豪亨">（mH）</span>
+              </p>
+            </fieldset>            
+            <p><a href="javascript:void(0);" onclick="clearall()" id="ClearAll">[Clear]</a> <a href="#top">[Top]</a></p>
+
+          </form>
+        </section>
+        <footer id="footer">
+        </footer>
+    </section>
+    <script>
+
+
+    var om = document.getElementById("om")
+    var ko = document.getElementById("ko")
+    var mo = document.getElementById("mo")
+    var pf = document.getElementById("pf")
+    var nf = document.getElementById("nf")
+    var uf = document.getElementById("uf")
+        var nh = document.getElementById("nh")
+    var uh = document.getElementById("uh")
+    var mh = document.getElementById("mh")
+
+function convert(val) {
+    if (val < 1) {
+        return parseFloat(val.toPrecision(5));
+    } else if (val >= 1e9 || val <= 1e-9) {
+        return parseFloat(val.toExponential(5));
+    } else {
+        return parseFloat(val.toFixed(5));
+    }
+}
+
+om.oninput = function(e){
+    ko.value = convert(this.value * 1e-3);
+    mo.value = convert(this.value * 1e-6);
+}
+ko.oninput = function(e){
+    om.value = convert(this.value * 1e+3);
+    mo.value = convert(this.value * 1e-3);
+}
+mo.oninput = function(e){
+    om.value = convert(this.value * 1e+6);
+    ko.value = convert(this.value * 1e+3);
+}
+pf.oninput = function(e){
+    nf.value = convert(this.value * 1e-3);
+    uf.value = convert(this.value * 1e-6);
+}
+nf.oninput = function(e){
+    pf.value = convert(this.value * 1e+3);
+    uf.value = convert(this.value * 1e-3);
+}
+uf.oninput = function(e){
+    pf.value = convert(this.value * 1e+6);
+    nf.value = convert(this.value * 1e+3);
+}
+nh.oninput = function(e){
+    uh.value = convert(this.value * 1e-3);
+    mh.value = convert(this.value * 1e-6);
+}
+uh.oninput = function(e){
+    nh.value = convert(this.value * 1e+3);
+    mh.value = convert(this.value * 1e-3);
+}
+mh.oninput = function(e){
+    nh.value = convert(this.value * 1e+6);
+    uh.value = convert(this.value * 1e+3);
+}
+
+function clearall(){
+om.value = "";
+ko.value = "";
+mo.value = "";
+pf.value = "";
+nf.value = "";
+uf.value = "";
+nh.value = "";
+uh.value = "";
+mh.value = "";
+}
+
+    </script>
+</body>
+
+</html>
